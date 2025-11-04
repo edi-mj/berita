@@ -35,7 +35,6 @@ img {
 a {
   text-decoration: none;
   color: #d9534f;
-  /* Warna merah berita */
   transition: color 0.2s ease;
 }
 
@@ -153,6 +152,7 @@ h4 {
 
 /* Konten Utama */
 .site-main {
+  min-height: 100vh;
   padding-top: 30px;
 }
 
@@ -284,6 +284,90 @@ h4 {
 .copyright {
   font-size: 0.9rem;
   color: #888;
+}
+
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+  gap: 15px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #222;
+}
+
+.page-header a:hover {
+  color: #fff;
+}
+
+/* Styling Tombol Aksi */
+.btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  border-color: #6c757d;
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+}
+
+.btn:last-child {
+  margin-right: 0;
+}
+
+.btn-edit {
+  background-color: #fff;
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-edit:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: #fff;
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.btn-delete:hover {
+  background-color: #dc3545;
+  color: #fff;
 }
 
 /* Media Queries (Responsif) */
