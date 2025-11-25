@@ -1,8 +1,15 @@
 <?php
 require_once('../base.php');
 require_once(BASE_PATH . '/database.php');
+require_once(BASE_PATH . '/otorisasi.php');
 
-// code..
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $id_sementara = 1;
+  $_POST['id_penulis'] = $id_sementara;
+  // validasi dulu nanti
+  addArticle($_POST);
+  header('Location: index.php');
+}
 
 $list_css_tambahan = ['form-article.css'];
 include_once BASE_PATH . '/components/header.php';

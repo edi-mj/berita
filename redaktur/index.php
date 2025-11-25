@@ -1,8 +1,14 @@
 <?php
 require_once('../base.php');
 require_once(BASE_PATH . '/database.php');
+require_once(BASE_PATH . '/otorisasi.php');
 
-// code..
+// var_dump(getAllArticles());
+$articles = getAllArticles();
+
+if (isset($_GET['keyword'])) {
+    $articles = getArticlesBySearch($_GET['keyword']);
+}
 
 $list_css_tambahan = [
     'table.css'
@@ -28,6 +34,7 @@ include_once(BASE_PATH . '/components/header.php');
                     <th>Judul</th>
                     <th>Konten</th>
                     <th>Penulis</th>
+                    <th>Redaktur</th>
                     <th>Status</th>
                     <th>Created At</th>
                     <th>Updated At</th>
@@ -36,19 +43,22 @@ include_once(BASE_PATH . '/components/header.php');
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><a href="edit.php?id=1"></a></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-edit"><a href="edit.php">Edit</a></button>
-                        <button type="button" class="btn btn-delete"><a href="delete.php">Delete</a></button>
-                    </td>
-                </tr>
+                <?php foreach ($articles as $article): ?>
+                    <tr>
+                        <td><a href="edit.php?id=1"><?= $article['judul'] ?></a></td>
+                        <td><?= $article['isi'] ?></td>
+                        <td><?= $article['namaPenulis'] ?></td>
+                        <td><?= $article['namaRedaktur'] ?></td>
+                        <td><?= $article['status'] ?></td>
+                        <td><?= $article['created_at'] ?></td>
+                        <td><?= $article['published_at'] ?></td>
+                        <td><?= $article['updated_at'] ?></td>
+                        <td>
+                            <button type="button" class="btn btn-edit"><a href="edit.php?id_artikel=<?= $article['id_artikel'] ?>">Edit</a></button>
+                            <button type="button" class="btn btn-delete"><a href="delete.php?id_artikel=<?= $article['id_artikel'] ?>">Delete</a></button>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
