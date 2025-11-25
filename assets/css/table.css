@@ -1,0 +1,50 @@
+/* Styling untuk tabel */
+.draft-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* Styling caption (judul tabel) */
+.draft-table caption {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+  caption-side: bottom;
+  color: #555;
+}
+
+.draft-table th,
+.draft-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Styling header tabel */
+.draft-table thead tr {
+  background-color: darkgrey;
+  color: #333;
+}
+
+/* Styling untuk baris genap */
+.draft-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.draft-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.draft-table td a {
+  color: black;
+}
+
+.draft-table td a:hover {
+  color: blue;
+}
+
+.draft-table button a:hover {
+  color: black;
+}

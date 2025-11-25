@@ -1,0 +1,438 @@
+/* Import font */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.ttf');
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular.ttf');
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Regular.ttf');
+}
+
+/* Reset Dasar & Pengaturan Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #d9534f;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #b52b27;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utilitas & Layout Utama */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+/* Header & Navigasi */
+.site-header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-bottom: 3px solid #d9534f;
+  padding: 15px 0;
+}
+
+.site-header .container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Membungkus elemen di mobile */
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #333;
+}
+
+.logo span {
+  color: #d9534f;
+}
+
+/* Navigasi Utama */
+.main-nav {
+  display: block;
+  width: 100%;
+  order: 3;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-nav a {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+  padding: 5px 0;
+  display: block;
+}
+
+.main-nav a:hover {
+  color: #d9534f;
+}
+
+/* Form Pencarian */
+.search-form {
+  display: flex;
+  width: 100%;
+  order: 2;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.search-form input[type='search'] {
+  border: none;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  background: #f9f9f9;
+  flex-grow: 1;
+}
+
+.search-form input[type='search']:focus {
+  outline: none;
+  background: #fff;
+}
+
+.search-form button {
+  border: none;
+  background: #d9534f;
+  color: white;
+  padding: 0 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.search-form button:hover {
+  background-color: #b52b27;
+}
+
+/* Konten Utama */
+.site-main {
+  min-height: 100vh;
+  padding-top: 30px;
+}
+
+/* Berita Utama (Headline) */
+.headline-section {
+  margin-bottom: 30px;
+}
+
+.headline-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.headline-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.headline-content {
+  padding: 20px;
+}
+
+.category {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #d9534f;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.headline-content h2 {
+  font-size: 1.8rem;
+  margin: 8px 0 12px;
+}
+
+.headline-content .excerpt {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* Layout Utama */
+.main-layout {
+  display: block;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #d9534f;
+  padding-bottom: 8px;
+}
+
+/* Daftar Berita Terbaru */
+.latest-news-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.news-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.news-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.news-card .news-content {
+  padding: 15px;
+}
+
+.news-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 5px 0 10px;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #333;
+  color: #ccc;
+  padding: 30px 0;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px 20px;
+  margin-bottom: 15px;
+}
+
+.footer-nav a {
+  color: #ccc;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+  gap: 15px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #222;
+}
+
+.page-header a:hover {
+  color: #fff;
+}
+
+/* Styling Tombol Aksi */
+.btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  border-color: #6c757d;
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+}
+
+.btn:last-child {
+  margin-right: 0;
+}
+
+.btn-edit {
+  background-color: #fff;
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-edit:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: #fff;
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.btn-delete:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Media Queries (Responsif) */
+
+/* Tampilan Tablet (Medium) */
+@media (min-width: 640px) {
+  .headline-card {
+    flex-direction: row;
+  }
+
+  .headline-card img {
+    width: 50%;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .headline-content {
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .headline-content h2 {
+    font-size: 2rem;
+  }
+
+  .latest-news-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Tampilan Desktop (Large) */
+@media (min-width: 1024px) {
+  .site-header .container {
+    flex-wrap: nowrap;
+    gap: 25px;
+  }
+
+  .main-nav {
+    width: auto;
+    order: 0;
+  }
+
+  .main-nav ul {
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .main-nav a {
+    padding: 0;
+    display: inline-block;
+  }
+
+  .search-form {
+    width: auto;
+    order: 0;
+  }
+
+  .search-form input[type='search'] {
+    flex-grow: 0;
+  }
+
+  .latest-news-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
