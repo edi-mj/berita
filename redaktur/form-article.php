@@ -1,4 +1,4 @@
-<form action="#" method="POST" class="form-artikel">
+<form action="#" method="POST" class="form-artikel" enctype="multipart/form-data">
 
   <div class="form-group">
     <label for="judul">Judul Artikel</label>
@@ -8,6 +8,11 @@
   <div class="form-group">
     <label for="isi">Konten</label>
     <textarea id="isi" name="isi" class="form-control" rows="10"><?= isset($artikel) ?  $artikel['isi'] : '' ?></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="cover">Cover</label>
+    <input type="file" name="cover" id="cover">
   </div>
 
   <div class="form-actions">

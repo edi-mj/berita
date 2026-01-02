@@ -20,14 +20,16 @@ function getAllArticles()
 	return $articles;
 }
 
-function addArticle(array $data): void
+function addArticle(array $data, string $file_image): void
 {
-	$stmnt = DBH->prepare('INSERT INTO Artikel (judul, isi, id_penulis) VALUES (:judul, :isi, :id_penulis)');
+	$stmnt = DBH->prepare('INSERT INTO Artikel (judul, isi, id_penulis, file_gambar) VALUES (:judul, :isi, :id_penulis, :file_gambar)');
 	$stmnt->execute([
 		":judul" => htmlspecialchars($data['judul']),
 		":isi" => htmlspecialchars($data['isi']),
-		"id_penulis" => $data['id_penulis']
+		"id_penulis" => $data['id_penulis'],
+		":file_gambar" => $file_image
 	]);
+	move_uploaded_file($_FILES["cover"]["tmp_name"], BASE_PATH . '/assets/img/uploads/' . $file_image);
 }
 
 function editArticle(int $id, array $data): void
@@ -79,4 +81,14 @@ function getArticlesBySearch(string $keyword)
 	]);
 	$articles = $stmnt->fetchAll();
 	return $articles;
+}
+
+function countArticlesCategory(): array
+{
+	$stmnt = DBH->prepare(
+		'SELECT nama_kategori AS kategori, COUNT(*) as jumlah FROM `kategori` AS k JOIN `artikel_kategori` AS ak ON ak.id_kategori = k.id_kategori GROUP BY ak.id_kategori;'
+	);
+
+	$stmnt->execute();
+	return $stmnt->fetchAll();
 }

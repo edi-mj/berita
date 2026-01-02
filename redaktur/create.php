@@ -2,12 +2,18 @@
 require_once('../base.php');
 require_once(BASE_PATH . '/database.php');
 require_once(BASE_PATH . '/otorisasi.php');
+require_once(BASE_PATH . '/validations.php');
+
+$errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $id_sementara = 1;
   $_POST['id_penulis'] = $id_sementara;
+
+  $file_image = getFileImage($errors);
+
   // validasi dulu nanti
-  addArticle($_POST);
+  addArticle($_POST, $file_image);
   header('Location: index.php');
 }
 
