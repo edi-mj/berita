@@ -2,6 +2,8 @@
 require_once('base.php');
 require_once(BASE_PATH . '/database.php');
 
+$articles = getAllArticles();
+
 // Tambahkan varibel $nav_file jika ada navbar khusus
 $nav_file = 'nav-user.php';
 include_once(BASE_PATH . '/components/header.php');
@@ -34,14 +36,16 @@ include_once(BASE_PATH . '/components/header.php');
 				<h2 class="section-title">Berita Terbaru</h2>
 				<div class="latest-news-list">
 					<!-- Artikel Berita -->
-					<article class="news-card">
-						<img src="" alt="Gambar berita">
-						<div class="news-content">
-							<span class="category">Kategori</span>
-							<h3>Judul</h3>
-							<span class="meta">Penulis | Tanggal</span>
-						</div>
-					</article>
+					<?php foreach ($articles as $article): ?>
+						<article class="news-card">
+							<img src="<?= BASE_URL . '/assets/img/uploads/' . $article['file_gambar'] ?>?>" alt="Gambar berita">
+							<div class="news-content">
+								<span class="category">Kategori</span>
+								<h3>Judul</h3>
+								<span class="meta">Penulis | Tanggal</span>
+							</div>
+						</article>
+					<?php endforeach; ?>
 				</div>
 			</section>
 
