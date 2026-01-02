@@ -13,6 +13,7 @@ if (isset($_GET['keyword'])) {
 $list_css_tambahan = [
     'table.css'
 ];
+$nav_file = 'nav-redaktur.php';
 include_once(BASE_PATH . '/components/header.php');
 ?>
 
