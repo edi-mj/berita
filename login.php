@@ -17,17 +17,19 @@ include_once(BASE_PATH . '/components/header.php');
 ?>
 
 
-<main>
-	<form method="POST" action="">
-		<div>
-			<input type="text" name="username" placeholder="Masukkan Username">
-		</div>
-		<div>
-			<input type="password" name="password" placeholder="Masukkan password">
-		</div>
-		<span><?= $errors['login'] ?? "" ?></span>
-		<input type="submit" name="submit" value="submit"> 
-	</form>
+<main class="site-main">
+	<div class="container">
+		<form method="POST">
+			<div>
+				<input type="text" name="username" placeholder="Masukkan Username">
+			</div>
+			<div>
+				<input type="password" name="password" placeholder="Masukkan password">
+			</div>
+			<span><?= $errors['login'] ?? "" ?></span>
+			<br><input type="submit" name="submit" value="Login">
+		</form>
+	</div>
 </main>
 
 
